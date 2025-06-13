@@ -1,6 +1,11 @@
 package com.example.feedback.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
 import lombok.Data;
 
 
@@ -13,10 +18,16 @@ public class Feedback {
 
     private Long id;
 
+    @NotBlank
+    @Size(min=10)
     private String comment;
+
+    @Min(0)
+    @Max(5)
     private int rating;
 
-    @ManyToOne
-    @JoinColumn(name = "user_id")
-    private User user;
+//    @ManyToOne
+//    private User user;
+    @JsonProperty("user_id")
+    private long userId;
 }

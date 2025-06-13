@@ -1,10 +1,10 @@
-package com.example.feedback_rating_api_spring;
+package com.example.feedback;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class FeedbackRatingApiSpringApplicationTests {
+class FeedbackApplicationTests {
 
 	@Test
 	void contextLoads() {

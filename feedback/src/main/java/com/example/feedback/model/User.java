@@ -15,6 +15,6 @@ public class User {
 
     private String name;
 
-    @OneToMany(mappedBy = "user")
-    private List<Feedback> feedbacks;
+//    @OneToMany(mappedBy = "user")
+//    private List<Feedback> feedbacks;
 }

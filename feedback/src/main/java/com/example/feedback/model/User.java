@@ -5,6 +5,7 @@ import lombok.Data;
 import java.util.List;
 
 @Entity
+@Table(name = "users")
 @Data
 public class User {
 
@@ -14,6 +15,6 @@ public class User {
 
     private String name;
 
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "user")
     private List<Feedback> feedbacks;
 }

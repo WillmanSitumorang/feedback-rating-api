@@ -26,8 +26,9 @@ public class Feedback {
     @Max(5)
     private int rating;
 
-//    @ManyToOne
-//    private User user;
-    @JsonProperty("user_id")
-    private long userId;
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
+//    @JsonProperty("user_id")
+//    private long userId;
 }

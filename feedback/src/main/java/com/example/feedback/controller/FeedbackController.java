@@ -2,6 +2,7 @@ package com.example.feedback.controller;
 
 import java.util.List;
 
+import com.example.feedback.dto.FeedbackRequest;
 import com.example.feedback.service.RatingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
@@ -37,8 +38,8 @@ public class FeedbackController {
     }
     // Endpoint to send feedback
     @PostMapping
-    public Feedback sendFeedback(@RequestBody Feedback feedback) {
-        return feedbackService.sendFeedback(feedback);
+    public Feedback sendFeedback(@RequestBody FeedbackRequest request) {
+        return feedbackService.sendFeedback(request);
     }
     // Endpoint to update feedback by id
     @PutMapping("/{id}")

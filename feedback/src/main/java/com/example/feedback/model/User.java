@@ -1,6 +1,8 @@
 package com.example.feedback.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
 import lombok.Data;
 import java.util.List;
 
@@ -15,6 +17,10 @@ public class User {
 
     private String name;
 
-//    @OneToMany(mappedBy = "user")
-//    private List<Feedback> feedbacks;
+    @Email
+    private String email;
+
+    @OneToMany(mappedBy = "user")
+    @JsonIgnore
+    private List<Feedback> feedbacks;
 }
